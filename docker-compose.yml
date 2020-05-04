@@ -5,8 +5,6 @@ services:
     volumes:
       - .:/myapp:delegated
       - bundle:/usr/local/bundle:cached
-      - package:/myapp/node_modules:cached
-      # ここからは同期高速化のために明示的にホストとの同期を切る
       - /myapp/.git
       - /myapp/log
       - /myapp/tmp
