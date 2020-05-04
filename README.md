@@ -7,6 +7,6 @@ rails new .
 
 ```
 docker-compose run --rm rails rails new $APP_NAME
-mv /$APP_NAME/* .
-rm -rf /$APP_NAME
+mv $APP_NAME/* .
+rm -r /$APP_NAME
 ```
