@@ -4,9 +4,13 @@ ENV APP_DIR /myapp
 
 ENV LANG C.UTF-8
 
+RUN curl -sL https://deb.nodesource.com/setup_11.x | bash -
+
 RUN apt-get update -qq && apt-get install -y \
   default-mysql-client \
-  vim
+  vim \
+  nodejs \
+  npm
 
 RUN mkdir ${APP_DIR}
 WORKDIR ${APP_DIR}
