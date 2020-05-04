@@ -4,7 +4,7 @@ ENV APP_DIR /myapp
 
 ENV LANG C.UTF-8
 
-RUN curl -sL https://deb.nodesource.com/setup_11.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
 
 RUN apt-get update -qq && apt-get install -y \
   default-mysql-client \
