@@ -9,7 +9,6 @@
 ```
 dc build
 dc run --rm rails rails webpacker:install
-dc run --rm rails rails db:create
 ```
 
 # rails s

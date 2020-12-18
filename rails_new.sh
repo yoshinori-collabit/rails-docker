@@ -12,7 +12,7 @@ RAILS_VERSION="6"
 
 docker run --rm -v `pwd`:/usr/src/app ruby:${RUBY_VERSION} sh -c \
 "
-gem install rails && rails new /usr/src/app --database postgresql --skip-test --skip-turbolinks --git --skip-bundle --skip-webpack-install --version ${RAILS_VERSION}
+gem install rails && rails new /usr/src/app --database postgresql --skip --skip-test --skip-turbolinks --git --skip-bundle --skip-webpack-install --version ${RAILS_VERSION}
 "
 touch Gemfile.lock
 

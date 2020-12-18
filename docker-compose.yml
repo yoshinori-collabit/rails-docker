@@ -5,6 +5,7 @@ services:
     volumes:
       - .:/myapp:delegated
       # - bundle:/usr/local/bundle:cached
+      - /node_modules
       - /myapp/log
       - /myapp/tmp
       - /myapp/vendor
