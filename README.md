@@ -1,19 +1,24 @@
-# rails new
+# README
 
-```
-./rails_new.sh
-```
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-# rails s
+Things you may want to cover:
 
-## 初回 || gem 追加時 のみ実行
+* Ruby version
 
-```
-docker-compose build
-```
+* System dependencies
 
-## 毎回
+* Configuration
 
-```
-docker-compose up -d
-```
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
