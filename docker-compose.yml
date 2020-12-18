@@ -5,23 +5,36 @@ services:
     volumes:
       - .:/myapp:delegated
       - bundle:/usr/local/bundle:cached
-      - /myapp/.git
       - /myapp/log
       - /myapp/tmp
       - /myapp/vendor
     ports:
       - 3000:3000
     depends_on:
-      - mysql
-  mysql:
-    image: mysql:5.7
+      # - mysql
+      - postgres
+  # mysql:
+  #   image: mysql:5.7
+  #   ports:
+  #     - 3306:3306
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: password
+  #     MYSQL_USER: root
+  #   volumes:
+  #     - mysql:/var/lib/mysql
+  postgres:
+    image: postgres:10.6
+    restart: always
+    # Increase max_connections for better dev experience :)
+    command: postgres -c 'max_connections=300'
     ports:
-      - 3306:3306
+      - "5432:5432"
     environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_USER: root
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
     volumes:
-      - mysql:/var/lib/mysql
+      - postgres:/var/lib/postgresql/data
 volumes:
   bundle:
-  mysql:
+  # mysql:
+  postgres:

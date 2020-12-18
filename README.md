@@ -1,12 +1,19 @@
 # rails new
-```
-rails new .
-
-とするとapplication_nameがmyappになる
-```
 
 ```
-docker-compose run --rm rails rails new $APP_NAME
-mv $APP_NAME/* .
-rm -r /$APP_NAME
+./rails_new.sh
+```
+
+# rails s
+
+## 初回 || gem 追加時 のみ実行
+
+```
+docker-compose build
+```
+
+## 毎回
+
+```
+docker-compose up -d
 ```

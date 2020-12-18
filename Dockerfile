@@ -1,15 +1,15 @@
-FROM ruby:2.7.1
+FROM ruby:2.7.1-alpine
 
 ENV APP_DIR /myapp
 
 ENV LANG C.UTF-8
 
-RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
+RUN apk update && \
+  apk upgrade && \
+  apk add --no-cache tzdata postgresql-dev postgresql mysql-client mysql-dev bash git && \
+  apk add --virtual build-packages --no-cache build-base curl-dev
 
-RUN apt-get update -qq && apt-get install -y \
-  default-mysql-client \
-  vim \
-  nodejs
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
 
 RUN npm install -g yarn
 
@@ -20,6 +20,8 @@ COPY Gemfile ${APP_DIR}/Gemfile
 COPY Gemfile.lock ${APP_DIR}/Gemfile.lock
 
 RUN bundle install
+
+RUN apk del build-packages
 
 COPY . ${APP_DIR}
 
