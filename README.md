@@ -1,24 +1,19 @@
-# README
+# rails new
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```
+./rails_new.sh
+```
 
-Things you may want to cover:
+# before rails s
 
-* Ruby version
+```
+dc build
+dc run --rm rails rails webpacker:install
+dc run --rm rails rails db:create
+```
 
-* System dependencies
+# rails s
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+dc up -d
+```
